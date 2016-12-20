@@ -1,0 +1,17 @@
+/* 
+  localizable.strings
+  Test App - Books
+
+  Created by Jakub on 20.12.16.
+  Copyright © 2016 Ponikelský Jakub. All rights reserved.
+*/
+
+"BOOK_MARK_READED" = "Readed";
+
+"BOOK_MARK_UNREADED" = "Pending";
+
+"BOOKS_LIST_FILTER_ALL" = "All";
+
+"BOOKS_LIST_FILTER_WITH_RATING" = "Top Rated";
+
+"BOOK_DETAIL_RATING" = "Avg. Rating:";

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  jpBooksController.h
 //  Test App - Books
 //
 //  Created by Jakub on 20.12.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface jpBooksController : UITableViewController
 
 @end
-

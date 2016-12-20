@@ -7,27 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B80F5FF1E099F330022A68E /* jpBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */; };
 		3BCB1D461E0928C700C8AD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D451E0928C700C8AD53 /* main.m */; };
 		3BCB1D491E0928C700C8AD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D481E0928C700C8AD53 /* AppDelegate.m */; };
-		3BCB1D4C1E0928C700C8AD53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D4B1E0928C700C8AD53 /* ViewController.m */; };
 		3BCB1D4F1E0928C700C8AD53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D4D1E0928C700C8AD53 /* Main.storyboard */; };
 		3BCB1D521E0928C700C8AD53 /* Test_App___Books.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D501E0928C700C8AD53 /* Test_App___Books.xcdatamodeld */; };
 		3BCB1D541E0928C700C8AD53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D531E0928C700C8AD53 /* Assets.xcassets */; };
 		3BCB1D571E0928C700C8AD53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D551E0928C700C8AD53 /* LaunchScreen.storyboard */; };
+		3BCB1D651E09490400C8AD53 /* Books.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D641E09490400C8AD53 /* Books.json */; };
+		3BCB1D681E094A7700C8AD53 /* jpBooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D671E094A7700C8AD53 /* jpBooksController.m */; };
+		3BCB1D6B1E094CB400C8AD53 /* BooksDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D6A1E094CB400C8AD53 /* BooksDataObject.m */; };
+		3BCB1D701E09748D00C8AD53 /* jpBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D6F1E09748D00C8AD53 /* jpBookTableViewCell.m */; };
+		3BCB1D721E09794100C8AD53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D711E09794100C8AD53 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B80F5FD1E099F330022A68E /* jpBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpBookDetailViewController.h; sourceTree = "<group>"; };
+		3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jpBookDetailViewController.m; sourceTree = "<group>"; };
 		3BCB1D411E0928C700C8AD53 /* Test App - Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App - Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCB1D451E0928C700C8AD53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BCB1D471E0928C700C8AD53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3BCB1D481E0928C700C8AD53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3BCB1D4A1E0928C700C8AD53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3BCB1D4B1E0928C700C8AD53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3BCB1D4E1E0928C700C8AD53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BCB1D511E0928C700C8AD53 /* Test_App___Books.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Test_App___Books.xcdatamodel"; sourceTree = "<group>"; };
 		3BCB1D531E0928C700C8AD53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BCB1D561E0928C700C8AD53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCB1D581E0928C700C8AD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BCB1D641E09490400C8AD53 /* Books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Books.json; sourceTree = "<group>"; };
+		3BCB1D661E094A7700C8AD53 /* jpBooksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpBooksController.h; sourceTree = "<group>"; };
+		3BCB1D671E094A7700C8AD53 /* jpBooksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jpBooksController.m; sourceTree = "<group>"; };
+		3BCB1D691E094CB400C8AD53 /* BooksDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksDataObject.h; sourceTree = "<group>"; };
+		3BCB1D6A1E094CB400C8AD53 /* BooksDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksDataObject.m; sourceTree = "<group>"; };
+		3BCB1D6E1E09748D00C8AD53 /* jpBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpBookTableViewCell.h; sourceTree = "<group>"; };
+		3BCB1D6F1E09748D00C8AD53 /* jpBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jpBookTableViewCell.m; sourceTree = "<group>"; };
+		3BCB1D711E09794100C8AD53 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,16 +73,14 @@
 		3BCB1D431E0928C700C8AD53 /* Test App - Books */ = {
 			isa = PBXGroup;
 			children = (
+				3BCB1D6C1E09744D00C8AD53 /* GUI Items */,
+				3BCB1D5F1E092B9900C8AD53 /* Data */,
+				3BCB1D601E092BA900C8AD53 /* ViewControllers */,
+				3BCB1D5E1E092B8B00C8AD53 /* Storyboards */,
+				3BCB1D441E0928C700C8AD53 /* Supporting Files */,
 				3BCB1D471E0928C700C8AD53 /* AppDelegate.h */,
 				3BCB1D481E0928C700C8AD53 /* AppDelegate.m */,
-				3BCB1D4A1E0928C700C8AD53 /* ViewController.h */,
-				3BCB1D4B1E0928C700C8AD53 /* ViewController.m */,
-				3BCB1D4D1E0928C700C8AD53 /* Main.storyboard */,
-				3BCB1D531E0928C700C8AD53 /* Assets.xcassets */,
-				3BCB1D551E0928C700C8AD53 /* LaunchScreen.storyboard */,
 				3BCB1D581E0928C700C8AD53 /* Info.plist */,
-				3BCB1D501E0928C700C8AD53 /* Test_App___Books.xcdatamodeld */,
-				3BCB1D441E0928C700C8AD53 /* Supporting Files */,
 			);
 			path = "Test App - Books";
 			sourceTree = "<group>";
@@ -80,6 +91,64 @@
 				3BCB1D451E0928C700C8AD53 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BCB1D5E1E092B8B00C8AD53 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB1D551E0928C700C8AD53 /* LaunchScreen.storyboard */,
+				3BCB1D4D1E0928C700C8AD53 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3BCB1D5F1E092B9900C8AD53 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB1D771E09809700C8AD53 /* Data Classes */,
+				3BCB1D641E09490400C8AD53 /* Books.json */,
+				3BCB1D531E0928C700C8AD53 /* Assets.xcassets */,
+				3BCB1D501E0928C700C8AD53 /* Test_App___Books.xcdatamodeld */,
+				3BCB1D691E094CB400C8AD53 /* BooksDataObject.h */,
+				3BCB1D6A1E094CB400C8AD53 /* BooksDataObject.m */,
+				3BCB1D711E09794100C8AD53 /* Localizable.strings */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		3BCB1D601E092BA900C8AD53 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB1D661E094A7700C8AD53 /* jpBooksController.h */,
+				3BCB1D671E094A7700C8AD53 /* jpBooksController.m */,
+				3B80F5FD1E099F330022A68E /* jpBookDetailViewController.h */,
+				3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3BCB1D6C1E09744D00C8AD53 /* GUI Items */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB1D6D1E09745B00C8AD53 /* Cells */,
+			);
+			name = "GUI Items";
+			sourceTree = "<group>";
+		};
+		3BCB1D6D1E09745B00C8AD53 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB1D6E1E09748D00C8AD53 /* jpBookTableViewCell.h */,
+				3BCB1D6F1E09748D00C8AD53 /* jpBookTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		3BCB1D771E09809700C8AD53 /* Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB1D651E09490400C8AD53 /* Books.json in Resources */,
+				3BCB1D721E09794100C8AD53 /* Localizable.strings in Resources */,
 				3BCB1D571E0928C700C8AD53 /* LaunchScreen.storyboard in Resources */,
 				3BCB1D541E0928C700C8AD53 /* Assets.xcassets in Resources */,
 				3BCB1D4F1E0928C700C8AD53 /* Main.storyboard in Resources */,
@@ -155,8 +226,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCB1D521E0928C700C8AD53 /* Test_App___Books.xcdatamodeld in Sources */,
-				3BCB1D4C1E0928C700C8AD53 /* ViewController.m in Sources */,
 				3BCB1D491E0928C700C8AD53 /* AppDelegate.m in Sources */,
+				3BCB1D701E09748D00C8AD53 /* jpBookTableViewCell.m in Sources */,
+				3BCB1D681E094A7700C8AD53 /* jpBooksController.m in Sources */,
+				3B80F5FF1E099F330022A68E /* jpBookDetailViewController.m in Sources */,
+				3BCB1D6B1E094CB400C8AD53 /* BooksDataObject.m in Sources */,
 				3BCB1D461E0928C700C8AD53 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +352,7 @@
 				DEVELOPMENT_TEAM = WU5Z456Y3P;
 				INFOPLIST_FILE = "Test App - Books/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cz.ponikelsky.Test-App---Books";
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ponikelsky.test-app-books";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -290,7 +364,7 @@
 				DEVELOPMENT_TEAM = WU5Z456Y3P;
 				INFOPLIST_FILE = "Test App - Books/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cz.ponikelsky.Test-App---Books";
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ponikelsky.test-app-books";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -314,6 +388,7 @@
 				3BCB1D5D1E0928C700C8AD53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
