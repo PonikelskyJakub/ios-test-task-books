@@ -7,7 +7,6 @@
 //
 
 #import "jpBooksController.h"
-#import "BooksDataObject.h"
 #import "jpBookTableViewCell.h"
 #import "JPBook+CoreDataClass.h"
 #import "jpBookDetailViewController.h"
@@ -28,6 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    BooksDataObject* object = [BooksDataObject sharedInstance];
+    object.delegate = self;
     
     [self.findTitleSearchBar resignFirstResponder];
     
@@ -109,6 +111,12 @@
     else{
         self.findTitle = nil;
     }
+    [self loadBooks];
+}
+
+#pragma mark - Books loading methods
+
+- (void)newBooksLoaded{
     [self loadBooks];
 }
 

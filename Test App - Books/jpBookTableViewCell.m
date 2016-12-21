@@ -27,9 +27,11 @@
 
 - (void) setReadedButtonTitle{
     if(self.book.readed){
+        [self.readedButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [self.readedButton setTitle:NSLocalizedString(@"BOOK_MARK_READED", @"Readed book button title") forState:UIControlStateNormal];
     }
     else{
+        [self.readedButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.readedButton setTitle:NSLocalizedString(@"BOOK_MARK_UNREADED", @"Unreaded book button title") forState:UIControlStateNormal];
     }
 }

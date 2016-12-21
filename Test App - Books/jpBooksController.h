@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BooksDataObject.h"
 
-@interface jpBooksController : UITableViewController
+@interface jpBooksController : UITableViewController <BooksDataObjectDelegate>
 
 @end

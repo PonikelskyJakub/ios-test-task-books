@@ -9,7 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@protocol BooksDataObjectDelegate <NSObject>
+@optional
+- (void)newBooksLoaded;
+@end
+
 @interface BooksDataObject : NSObject
+
+@property (nonatomic, weak) id <BooksDataObjectDelegate> delegate;
 
 + (instancetype)sharedInstance;
 - (void) reloadBooksFromSource;
