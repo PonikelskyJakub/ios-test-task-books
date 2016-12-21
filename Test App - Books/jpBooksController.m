@@ -70,8 +70,7 @@
     JPBook* book = [self.booksArray objectAtIndex:[indexPath row]];
     
     cell.book = book;
-    cell.nameLabel.text = book.title;
-    [cell setReadedButtonTitle];
+    [cell setLayout];
     
     return cell;
 }

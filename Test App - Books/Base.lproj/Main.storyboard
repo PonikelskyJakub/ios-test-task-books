@@ -15,7 +15,7 @@
         <scene sceneID="03T-MQ-OeF">
             <objects>
                 <tableViewController title="Books" id="WZG-C2-Anr" customClass="jpBooksController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Fu-Tp-Vbh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Fu-Tp-Vbh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,21 +28,28 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bookReusableIdentifier" id="Mhx-zF-hK7" customClass="jpBookTableViewCell">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bookReusableIdentifier" rowHeight="90" id="Mhx-zF-hK7" customClass="jpBookTableViewCell">
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mhx-zF-hK7" id="a8k-i5-YL7">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tS9-Bn-jU5">
-                                            <rect key="frame" x="18" y="13" width="237" height="17.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cpd-q1-6RL">
+                                            <rect key="frame" x="18" y="4.5" width="80" height="80.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="Pxa-Bw-UFA"/>
+                                                <constraint firstAttribute="height" constant="80" id="ZOX-Jc-4yH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tS9-Bn-jU5">
+                                            <rect key="frame" x="108" y="18" width="147" height="53.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vy-xq-Azv">
-                                            <rect key="frame" x="265" y="13" width="59" height="17.5"/>
+                                            <rect key="frame" x="265" y="18" width="59" height="53.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="Read"/>
                                             <connections>
@@ -51,20 +58,23 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9vy-xq-Azv" firstAttribute="width" secondItem="tS9-Bn-jU5" secondAttribute="width" multiplier="0.25" id="1hS-15-lqQ"/>
+                                        <constraint firstItem="9vy-xq-Azv" firstAttribute="width" secondItem="tS9-Bn-jU5" secondAttribute="width" multiplier="0.4" id="1hS-15-lqQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="9vy-xq-Azv" secondAttribute="trailing" constant="10" id="AWI-uE-01d"/>
                                         <constraint firstItem="tS9-Bn-jU5" firstAttribute="centerY" secondItem="a8k-i5-YL7" secondAttribute="centerY" id="Cz4-oC-69I"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="9vy-xq-Azv" secondAttribute="bottom" constant="5" id="XFH-dN-Fh6"/>
-                                        <constraint firstItem="9vy-xq-Azv" firstAttribute="top" secondItem="a8k-i5-YL7" secondAttribute="topMargin" constant="5" id="bQk-ff-zuY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="tS9-Bn-jU5" secondAttribute="bottom" constant="5" id="fvI-oW-hHs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9vy-xq-Azv" secondAttribute="bottom" constant="10" id="XFH-dN-Fh6"/>
+                                        <constraint firstItem="9vy-xq-Azv" firstAttribute="top" secondItem="a8k-i5-YL7" secondAttribute="topMargin" constant="10" id="bQk-ff-zuY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tS9-Bn-jU5" secondAttribute="bottom" constant="10" id="fvI-oW-hHs"/>
                                         <constraint firstItem="9vy-xq-Azv" firstAttribute="centerY" secondItem="a8k-i5-YL7" secondAttribute="centerY" id="ixh-aS-wyH"/>
-                                        <constraint firstItem="tS9-Bn-jU5" firstAttribute="top" secondItem="a8k-i5-YL7" secondAttribute="topMargin" constant="5" id="jft-WM-S4o"/>
+                                        <constraint firstItem="tS9-Bn-jU5" firstAttribute="top" secondItem="a8k-i5-YL7" secondAttribute="topMargin" constant="10" id="jft-WM-S4o"/>
+                                        <constraint firstItem="tS9-Bn-jU5" firstAttribute="leading" secondItem="Cpd-q1-6RL" secondAttribute="trailing" constant="10" id="oaT-1j-bZu"/>
                                         <constraint firstItem="9vy-xq-Azv" firstAttribute="leading" secondItem="tS9-Bn-jU5" secondAttribute="trailing" constant="10" id="pHk-OU-VAj"/>
-                                        <constraint firstItem="tS9-Bn-jU5" firstAttribute="leading" secondItem="a8k-i5-YL7" secondAttribute="leadingMargin" constant="10" id="usP-P3-YKw"/>
+                                        <constraint firstItem="Cpd-q1-6RL" firstAttribute="centerY" secondItem="a8k-i5-YL7" secondAttribute="centerY" id="uhY-4y-QSY"/>
+                                        <constraint firstItem="Cpd-q1-6RL" firstAttribute="leading" secondItem="a8k-i5-YL7" secondAttribute="leadingMargin" constant="10" id="zoy-c2-phe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="tS9-Bn-jU5" id="Zk1-zu-43c"/>
+                                    <outlet property="previewImageView" destination="Cpd-q1-6RL" id="QtF-M7-b0O"/>
                                     <outlet property="readedButton" destination="9vy-xq-Azv" id="nge-BZ-an5"/>
                                 </connections>
                             </tableViewCell>

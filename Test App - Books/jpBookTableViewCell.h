@@ -13,9 +13,8 @@
 @interface jpBookTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) JPBook *book;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *readedButton;
 
 - (void) setReadedButtonTitle;
+- (void) setLayout;
 
 @end

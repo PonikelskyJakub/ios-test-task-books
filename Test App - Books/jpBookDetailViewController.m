@@ -34,8 +34,10 @@
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       if(self.imageImageView){
-                                          UIImage* image = [UIImage imageWithData:data];
-                                          self.imageImageView.image = image;
+                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                              UIImage* image = [UIImage imageWithData:data];
+                                              self.imageImageView.image = image;
+                                          });
                                       }
                                   }];
     [task resume];

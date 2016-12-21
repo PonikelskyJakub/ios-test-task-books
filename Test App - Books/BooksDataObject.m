@@ -92,6 +92,7 @@
             NSDictionary* imageLinks = [volumeInfo objectForKey:@"imageLinks"];
             if(imageLinks){
                 book.imageUrl = [imageLinks objectForKey:@"thumbnail"];
+                book.smallImageUrl = [imageLinks objectForKey:@"smallThumbnail"];
             }
         }
         
@@ -100,6 +101,7 @@
 }
 
 - (void) reloadBooksFromSource{
+    /*
     NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.googleapis.com/books/v1/volumes"]];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request2
@@ -107,9 +109,9 @@
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       [self actualizeDatabaseData:data];
                                   }];
-    [task resume];
-    //NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"Books" ofType:@"json"];
-    //[self actualizeDatabaseData:[NSData dataWithContentsOfFile:dataPath]];
+    [task resume];*/
+    NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"Books" ofType:@"json"];
+    [self actualizeDatabaseData:[NSData dataWithContentsOfFile:dataPath]];
 }
 
 - (NSArray*) getBooksWithRating: (NSNumber*) rating ContainsString: (NSString*) string{
