@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B80F5FF1E099F330022A68E /* jpBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */; };
+		3B80F6021E0A26FD0022A68E /* jpPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80F6011E0A26FD0022A68E /* jpPreviewViewController.m */; };
 		3BCB1D461E0928C700C8AD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D451E0928C700C8AD53 /* main.m */; };
 		3BCB1D491E0928C700C8AD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB1D481E0928C700C8AD53 /* AppDelegate.m */; };
 		3BCB1D4F1E0928C700C8AD53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB1D4D1E0928C700C8AD53 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		3B80F5FD1E099F330022A68E /* jpBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpBookDetailViewController.h; sourceTree = "<group>"; };
 		3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jpBookDetailViewController.m; sourceTree = "<group>"; };
+		3B80F6001E0A26FD0022A68E /* jpPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpPreviewViewController.h; sourceTree = "<group>"; };
+		3B80F6011E0A26FD0022A68E /* jpPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jpPreviewViewController.m; sourceTree = "<group>"; };
 		3BCB1D411E0928C700C8AD53 /* Test App - Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App - Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCB1D451E0928C700C8AD53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BCB1D471E0928C700C8AD53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				3BCB1D671E094A7700C8AD53 /* jpBooksController.m */,
 				3B80F5FD1E099F330022A68E /* jpBookDetailViewController.h */,
 				3B80F5FE1E099F330022A68E /* jpBookDetailViewController.m */,
+				3B80F6001E0A26FD0022A68E /* jpPreviewViewController.h */,
+				3B80F6011E0A26FD0022A68E /* jpPreviewViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				3B80F5FF1E099F330022A68E /* jpBookDetailViewController.m in Sources */,
 				3BCB1D6B1E094CB400C8AD53 /* BooksDataObject.m in Sources */,
 				3BCB1D461E0928C700C8AD53 /* main.m in Sources */,
+				3B80F6021E0A26FD0022A68E /* jpPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

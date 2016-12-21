@@ -157,6 +157,16 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Mm-Oo-Lbf">
                                         <rect key="frame" x="19" y="15" width="337.5" height="267"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EM-MO-vMw">
+                                        <rect key="frame" x="38" y="513" width="300" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Preview on Google">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="previewButtonTouchUp:" destination="k4l-GL-EuG" eventType="touchUpInside" id="8YA-Qs-Nz4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="D8b-11-Wla" firstAttribute="centerX" secondItem="D9P-eb-cEe" secondAttribute="centerX" id="0AA-3j-TH3"/>
@@ -165,10 +175,13 @@
                                     <constraint firstItem="OST-aH-lHL" firstAttribute="top" secondItem="gwE-bS-1gS" secondAttribute="bottom" constant="10" id="2aQ-5h-WXS"/>
                                     <constraint firstItem="4Mm-Oo-Lbf" firstAttribute="height" secondItem="D9P-eb-cEe" secondAttribute="height" multiplier="0.4" id="Bgw-DW-Cou"/>
                                     <constraint firstItem="D8b-11-Wla" firstAttribute="top" secondItem="4Mm-Oo-Lbf" secondAttribute="bottom" constant="10" id="GcD-75-NxM"/>
+                                    <constraint firstItem="3EM-MO-vMw" firstAttribute="top" secondItem="L4v-Ln-UGR" secondAttribute="bottom" constant="10" id="HYk-jN-gUw"/>
                                     <constraint firstItem="L4v-Ln-UGR" firstAttribute="width" secondItem="D9P-eb-cEe" secondAttribute="width" multiplier="0.9" id="JQW-4s-hHa"/>
                                     <constraint firstItem="gwE-bS-1gS" firstAttribute="width" secondItem="D9P-eb-cEe" secondAttribute="width" multiplier="0.9" id="K7o-30-xKy"/>
                                     <constraint firstItem="4Mm-Oo-Lbf" firstAttribute="top" secondItem="D9P-eb-cEe" secondAttribute="top" constant="15" id="Mfp-8c-dNc"/>
                                     <constraint firstItem="D8b-11-Wla" firstAttribute="width" secondItem="D9P-eb-cEe" secondAttribute="width" multiplier="0.9" id="NIi-HK-KSB"/>
+                                    <constraint firstItem="3EM-MO-vMw" firstAttribute="width" secondItem="D9P-eb-cEe" secondAttribute="width" multiplier="0.8" id="RC4-en-aOx"/>
+                                    <constraint firstAttribute="bottom" secondItem="3EM-MO-vMw" secondAttribute="bottom" constant="10" id="SLV-lT-BgG"/>
                                     <constraint firstItem="JiC-Lq-Ahk" firstAttribute="centerX" secondItem="D9P-eb-cEe" secondAttribute="centerX" id="XL9-vB-DDE"/>
                                     <constraint firstItem="ovU-B3-VBk" firstAttribute="width" secondItem="D9P-eb-cEe" secondAttribute="width" multiplier="0.9" id="Xdi-jZ-3v2"/>
                                     <constraint firstItem="ovU-B3-VBk" firstAttribute="top" secondItem="D8b-11-Wla" secondAttribute="bottom" constant="10" id="Y1U-HT-2Tl"/>
@@ -181,7 +194,7 @@
                                     <constraint firstItem="L4v-Ln-UGR" firstAttribute="centerX" secondItem="D9P-eb-cEe" secondAttribute="centerX" id="nhV-0r-f1T"/>
                                     <constraint firstItem="gwE-bS-1gS" firstAttribute="top" secondItem="ovU-B3-VBk" secondAttribute="bottom" constant="10" id="rVb-eb-L1S"/>
                                     <constraint firstItem="L4v-Ln-UGR" firstAttribute="top" secondItem="JiC-Lq-Ahk" secondAttribute="bottom" constant="10" id="u1z-4S-BCS"/>
-                                    <constraint firstAttribute="bottom" secondItem="L4v-Ln-UGR" secondAttribute="bottom" constant="10" id="xm3-l8-OrC"/>
+                                    <constraint firstItem="3EM-MO-vMw" firstAttribute="centerX" secondItem="D9P-eb-cEe" secondAttribute="centerX" id="wT7-yQ-cby"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -198,14 +211,49 @@
                         <outlet property="authorsLabel" destination="ovU-B3-VBk" id="oaC-A3-B9s"/>
                         <outlet property="descriptionLabel" destination="JiC-Lq-Ahk" id="5jF-d2-yJW"/>
                         <outlet property="imageImageView" destination="4Mm-Oo-Lbf" id="RfO-uS-nBc"/>
+                        <outlet property="previewButton" destination="3EM-MO-vMw" id="BxL-kr-fCV"/>
                         <outlet property="subtitleLabel" destination="gwE-bS-1gS" id="V1z-Fo-GdD"/>
                         <outlet property="textSnippetLabel" destination="OST-aH-lHL" id="EFh-Ss-lHr"/>
                         <outlet property="titleLabel" destination="D8b-11-Wla" id="wL8-WT-BD7"/>
+                        <segue destination="mq3-2B-y6q" kind="show" identifier="showPreviewOfBook" id="Ymc-qG-SzP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnH-fG-mUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.2" y="393.55322338830587"/>
+        </scene>
+        <!--Book preview-->
+        <scene sceneID="xRF-aX-3TU">
+            <objects>
+                <viewController title="Book preview" id="mq3-2B-y6q" customClass="jpPreviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PPg-yh-ath"/>
+                        <viewControllerLayoutGuide type="bottom" id="kh9-TR-0ks"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JQl-P3-bIE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yY-WX-EJx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6yY-WX-EJx" firstAttribute="width" secondItem="JQl-P3-bIE" secondAttribute="width" id="E7G-Um-Nvx"/>
+                            <constraint firstItem="6yY-WX-EJx" firstAttribute="height" secondItem="JQl-P3-bIE" secondAttribute="height" id="aHR-0F-ySG"/>
+                            <constraint firstItem="6yY-WX-EJx" firstAttribute="centerY" secondItem="JQl-P3-bIE" secondAttribute="centerY" id="idD-kN-t4m"/>
+                            <constraint firstItem="6yY-WX-EJx" firstAttribute="centerX" secondItem="JQl-P3-bIE" secondAttribute="centerX" id="jbh-HE-q9z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewWebView" destination="6yY-WX-EJx" id="WPV-wU-lZu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVG-37-BP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2750" y="397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0bg-Hl-7Qe">

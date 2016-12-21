@@ -7,6 +7,7 @@
 //
 
 #import "jpBookDetailViewController.h"
+#import "jpPreviewViewController.h"
 
 @interface jpBookDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageImageView;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *textSnippetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *AverageRatingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *previewButton;
 
 @end
 
@@ -49,7 +51,22 @@
     self.textSnippetLabel.text = self.book.textSnippet;
     self.descriptionLabel.text = self.book.bookDescription;
     self.AverageRatingLabel.text = [NSString stringWithFormat:@"%@ %.1f", NSLocalizedString(@"BOOK_DETAIL_RATING", @"Detail of book - rating"), self.book.rating];
+    
+    if (self.book.previewUrl == nil) {
+        [self.previewButton setHidden:YES];
+    }
+}
 
+- (IBAction)previewButtonTouchUp:(id)sender {
+    [self performSegueWithIdentifier:@"showPreviewOfBook" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showPreviewOfBook"]) {
+        jpPreviewViewController *previewVC = segue.destinationViewController;
+        previewVC.previewUrl = self.book.previewUrl;
+    }
 }
 
 @end

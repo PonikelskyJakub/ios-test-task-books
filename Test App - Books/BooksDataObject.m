@@ -65,71 +65,49 @@
     NSArray *allBooksArray = [allBooks objectForKey:@"items"];
     if ([allBooksArray count]) {
         for (id obj in allBooksArray) {
+            NSDictionary* volumeInfo = [obj objectForKey:@"volumeInfo"];
+            if(!volumeInfo){
+                continue;
+            }
+
             NSString* idOfBook = [obj objectForKey:@"id"];
             
             NSFetchRequest* request = [[NSFetchRequest alloc] init];
             NSEntityDescription* entity = [NSEntityDescription entityForName:@"Book" inManagedObjectContext:self.context];
             [request setEntity:entity];
-            
             [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", idOfBook]];
             
             NSError *error = nil;
             NSArray* fetchedBooks = [self.context executeFetchRequest:request error:&error];
             if (error == nil) {
+                JPBook *book;
                 if ([fetchedBooks count]) {
-                    NSDictionary* volumeInfo = [obj objectForKey:@"volumeInfo"];
-                    if(!volumeInfo){
-                        continue;
-                    }
-                    
-                    JPBook *book = [fetchedBooks lastObject];
-                    
-                    book.title = [volumeInfo objectForKey:@"title"];
-                    book.subtitle = [volumeInfo objectForKey:@"subtitle"];
-                    book.bookDescription = [volumeInfo objectForKey:@"description"];
-                    book.authors = [[volumeInfo objectForKey:@"authors"] componentsJoinedByString:@", "];
-                    book.rating = [[volumeInfo objectForKey:@"averageRating"] floatValue];
-                    book.id = idOfBook;
-                    
-                    NSDictionary* searchInfo = [obj objectForKey:@"searchInfo"];
-                    if(searchInfo){
-                        book.textSnippet = [searchInfo objectForKey:@"textSnippet"];
-                    }
-                    
-                    NSDictionary* imageLinks = [volumeInfo objectForKey:@"imageLinks"];
-                    if(imageLinks){
-                        book.imageUrl = [imageLinks objectForKey:@"thumbnail"];
-                        book.smallImageUrl = [imageLinks objectForKey:@"smallThumbnail"];
-                    }
+                    book = [fetchedBooks lastObject];
                 } else {
-                    NSDictionary* volumeInfo = [obj objectForKey:@"volumeInfo"];
-                    if(!volumeInfo){
-                        continue;
-                    }
-                    
-                    JPBook *book = [NSEntityDescription
+                    book = [NSEntityDescription
                                     insertNewObjectForEntityForName:@"Book"
                                     inManagedObjectContext:self.context];
-                    
-                    book.title = [volumeInfo objectForKey:@"title"];
-                    book.subtitle = [volumeInfo objectForKey:@"subtitle"];
-                    book.bookDescription = [volumeInfo objectForKey:@"description"];
-                    book.authors = [[volumeInfo objectForKey:@"authors"] componentsJoinedByString:@", "];
-                    book.rating = [[volumeInfo objectForKey:@"averageRating"] floatValue];
-                    book.id = idOfBook;
                     book.readed = NO;
-                    
-                    NSDictionary* searchInfo = [obj objectForKey:@"searchInfo"];
-                    if(searchInfo){
-                        book.textSnippet = [searchInfo objectForKey:@"textSnippet"];
-                    }
-                    
-                    NSDictionary* imageLinks = [volumeInfo objectForKey:@"imageLinks"];
-                    if(imageLinks){
-                        book.imageUrl = [imageLinks objectForKey:@"thumbnail"];
-                        book.smallImageUrl = [imageLinks objectForKey:@"smallThumbnail"];
-                    }
                 }
+                book.title = [volumeInfo objectForKey:@"title"];
+                book.subtitle = [volumeInfo objectForKey:@"subtitle"];
+                book.bookDescription = [volumeInfo objectForKey:@"description"];
+                book.authors = [[volumeInfo objectForKey:@"authors"] componentsJoinedByString:@", "];
+                book.rating = [[volumeInfo objectForKey:@"averageRating"] floatValue];
+                book.id = idOfBook;
+                book.previewUrl = [volumeInfo objectForKey:@"previewLink"];
+                
+                NSDictionary* searchInfo = [obj objectForKey:@"searchInfo"];
+                if(searchInfo){
+                    book.textSnippet = [searchInfo objectForKey:@"textSnippet"];
+                }
+                
+                NSDictionary* imageLinks = [volumeInfo objectForKey:@"imageLinks"];
+                if(imageLinks){
+                    book.imageUrl = [imageLinks objectForKey:@"thumbnail"];
+                    book.smallImageUrl = [imageLinks objectForKey:@"smallThumbnail"];
+                }
+
             }
             else{
                 NSLog(@"Error loading book:  %@\n%@", [error localizedDescription], [error userInfo]);
@@ -149,9 +127,9 @@
 
 - (void) reloadBooksFromSource{
     //[self removeDataFromDatabase];
-    NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.googleapis.com/books/v1/volumes?filter=free-ebooks&q=a"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.googleapis.com/books/v1/volumes?filter=free-ebooks&q=a"]];
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request2
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       [self actualizeDatabaseData:data];
