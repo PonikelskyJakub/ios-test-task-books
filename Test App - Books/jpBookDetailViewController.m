@@ -48,7 +48,8 @@
     self.authorsLabel.text = self.book.authors;
 
     self.subtitleLabel.text = self.book.subtitle;
-    self.textSnippetLabel.text = self.book.textSnippet;
+    NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[self.book.textSnippet dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    self.textSnippetLabel.attributedText = attrStr;
     self.descriptionLabel.text = self.book.bookDescription;
     self.AverageRatingLabel.text = [NSString stringWithFormat:@"%@ %.1f", NSLocalizedString(@"BOOK_DETAIL_RATING", @"Detail of book - rating"), self.book.rating];
     
