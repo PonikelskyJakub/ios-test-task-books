@@ -36,13 +36,6 @@
                                       if(self.imageImageView){
                                           UIImage* image = [UIImage imageWithData:data];
                                           self.imageImageView.image = image;
-                                          
-                                          if (self.imageImageView.bounds.size.height > image.size.height) {
-                                              self.imageImageView.contentMode = UIViewContentModeCenter;
-                                          }
-                                          else{
-                                              self.imageImageView.contentMode = UIViewContentModeScaleAspectFit;
-                                          }
                                       }
                                   }];
     [task resume];

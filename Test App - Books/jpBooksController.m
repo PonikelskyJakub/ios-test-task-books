@@ -18,6 +18,9 @@
 @property (nonatomic, strong) NSArray* booksArray;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterButton;
 @property BOOL allBooks;
+@property (nonatomic, strong) NSString* findTitle;
+@property (weak, nonatomic) IBOutlet UISearchBar *findTitleSearchBar;
+
 
 @end
 
@@ -26,23 +29,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadBooksAll:YES];
+    [self.findTitleSearchBar resignFirstResponder];
+    
+    self.findTitle = nil;
+    self.allBooks = YES;
+    [self loadBooks];
 }
 
 - (IBAction)FilterButtonAction:(id)sender {
-    [self loadBooksAll:!self.allBooks];
+    self.allBooks = !self.allBooks;
+    [self loadBooks];
 }
 
-- (void) loadBooksAll: (BOOL) all{
+- (void) loadBooks{
     BooksDataObject* object = [BooksDataObject sharedInstance];
-    if (all) {
+    if (self.allBooks) {
         self.filterButton.title = NSLocalizedString(@"BOOKS_LIST_FILTER_WITH_RATING", @"Show rated books");
-        self.booksArray = [object getBooksWithRating:nil];
+        self.booksArray = [object getBooksWithRating:nil ContainsString:self.findTitle];
     } else {
         self.filterButton.title = NSLocalizedString(@"BOOKS_LIST_FILTER_ALL", @"Show all books");
-        self.booksArray = [object getBooksWithRating:[NSNumber numberWithFloat:4.0]];
+        self.booksArray = [object getBooksWithRating:[NSNumber numberWithFloat:4.0] ContainsString:self.findTitle];
     }
-    self.allBooks = all;
     [self.tableView reloadData];
 }
 
@@ -77,10 +84,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    jpBookDetailViewController *detailVC = segue.destinationViewController;
-    NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-    JPBook* book = [self.booksArray objectAtIndex:[selectedPath row]];
-    detailVC.book = book;
+    if ([segue.identifier isEqualToString:@"showDetailOfBook"]) {
+        jpBookDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+        JPBook* book = [self.booksArray objectAtIndex:[selectedPath row]];
+        detailVC.book = book;
+    }
 }
 
 #pragma mark - Search bar method
@@ -89,11 +98,19 @@
     [searchBar resignFirstResponder];
 }
 
-- (void) filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    NSLog(@"%@ %@", searchText, scope);
-    //NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    //searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
+- (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar
+    textDidChange:(NSString *)searchText {
+    if([searchText length]){
+        self.findTitle = searchText;
+    }
+    else{
+        self.findTitle = nil;
+    }
+    [self loadBooks];
 }
 
 @end

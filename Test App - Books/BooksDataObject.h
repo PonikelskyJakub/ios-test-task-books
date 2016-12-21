@@ -13,8 +13,7 @@
 
 + (instancetype)sharedInstance;
 - (void) reloadBooksFromSource;
-- (NSArray*) getBooksWithRating: (NSNumber*) rating;
-- (NSManagedObject*) getBook;
+- (NSArray*) getBooksWithRating: (NSNumber*) rating ContainsString: (NSString*) string;
 - (void) saveBooksData;
 
 @end
