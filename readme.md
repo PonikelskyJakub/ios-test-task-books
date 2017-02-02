@@ -3,7 +3,7 @@ Test task for iOS Developer at HCL - Books application
 
 ####Task
 - Create simple application with list of books and possibility to look at detailed info.
-- List of books is provided in JSON file. Content of this file is downloaded from google Books API. Structure of JSON is described at https://developers.google.com/books/ or it is visible on https://www.googleapis.com/books/v1/volumes?filter=free­ebooks&q=a
+- List of books is provided in JSON file. Content of this file is downloaded from google Books API. Structure of JSON is described at https://developers.google.com/books/ or it is visible on https://www.googleapis.com/books/v1/volumes?filter=free-ebooks&q=a
 - Time of development depends on programmer’s consideration. 3 hours is recommended. Please log all your time of development and provide it to us with your projec.
 - There is no needs to spend any time with comments and documentation. Focus on readability, duplicity code and functionality.
 - Wisely manage your time, if you are stuck on some problem, just mock it and try to finish other parts.
@@ -13,7 +13,7 @@ There is mentioned JSON file with books too.
 
 ####Solution
 - Basic part
-- Advanced part - data can be downloaded from google api https://www.googleapis.com/books/v1/volumes
+- Advanced part - data can be downloaded from google api https://www.googleapis.com/books/v1/volumes?filter=free-ebooks&q=a
 - Advanced part - data can be searched
 - Advanced part - each row can show more data and image about book
 - Advanced part - marker indicating book as readed can be stored persistently
