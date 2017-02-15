@@ -50,5 +50,5 @@ There is mentioned JSON file with books too.
 - Remove singleton for data loading.
 - Check downloads when app goes in background.
 - Rename "readed" variables - poor English.
-- Comments
-- Unit and UI tests
+- Comments.
+- Unit and UI tests.
