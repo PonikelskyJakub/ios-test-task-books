@@ -1,5 +1,5 @@
 # Books Application
-Test task for iOS Developer at HCL - Books application.
+Test task for iOS Developer position at HCL - Books application.
 
 ##Installation
 
